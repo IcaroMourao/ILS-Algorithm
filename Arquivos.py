@@ -10,7 +10,7 @@ class Arquivos():
     
     def le_arq(self,path):
         #Inicializando a matriz com tamanho NxN
-        #Cada posição da matriz contém uma lista com a distância da cidade da posição para todas as outras cidades.
+        #Cada posição da matriz contém uma lista com a distância da cidade da posição para todas as outras cidades .
         self.matriz = self.constroiMatriz(self.qnt_cidades,[])
         arq = open(path,'r')
         texto = arq.readlines()
