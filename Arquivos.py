@@ -1,4 +1,5 @@
 import math
+from random import *
 
 class Arquivos():
     #Inicializando com a matriz e os vetores pra guardar as posicoes X-Y
@@ -39,9 +40,26 @@ class Arquivos():
             matriz.append(linha)
         return matriz
 
+    def constroi_solucao_aleatoria(self, cidades):
+        j = 1
+        cidade_escolhida = -1
+        s = list()
+        s.append(0)
+        while(len(s) != 50):
+            cidade_escolhida = randint(1,len(cidades))
+            if cidade_escolhida not in s:
+                s.append(cidade_escolhida)
+        print(len(s))
+        print(s)
+
+
+#Criando a instância de arquivos e informando a quantidade de registros a serem lidos (51)
 arq = Arquivos(51)
+
+#Lendo o arquivo e preenchendo a matriz de distâncias entre as cidades
 arq.le_arq('C:/Users/Wermeson Rocha/Documents/UFC/6º Semestre/Inteligência Artificial/arquivos_base/arquivos_base/C50.txt')
 #print(arq.matriz)
 lista = list(range(52))
 lista = lista[1:]
-print(lista)
+arq.constroi_solucao_aleatoria(lista)
+print(arq.matriz[0][50])
